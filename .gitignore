@@ -1,0 +1,7 @@
+data/*
+models/*
+.env
+
+# Exceptions (do not ignore specific control files)
+!data/.gitkeep    # Keep the 'data' folder tracked
+!models/.gitkeep  # Keep the 'models' folder tracked
