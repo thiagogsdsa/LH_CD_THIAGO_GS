@@ -459,28 +459,33 @@ def plot_top_frequencies(df, col_name, top_k=10):
 
 def plot_numeric_correlation(df, numeric_cols=None):
     """
-    Plots a correlation heatmap for numeric columns.
+    Plots a correlation heatmap for numeric columns using Matplotlib.
+    Works on GitHub and locally.
     """
     if numeric_cols is None:
         numeric_cols = df.select_dtypes(include=np.number).columns.tolist()
     
     corr = df[numeric_cols].corr()
+    n = len(corr.columns)
     
-    fig = go.Figure(
-        go.Heatmap(
-            z=corr.values,
-            x=corr.columns,
-            y=corr.columns,
-            colorscale='RdBu',
-            zmin=-1, zmax=1,
-            colorbar_title="Correlation"
-        )
-    )
-    fig.update_layout(title="Correlation Heatmap", width=800, height=600)
-    fig.show()
-
-
-
+    plt.figure(figsize=(10,8))
+    im = plt.imshow(corr, cmap='RdBu', vmin=-1, vmax=1)
+    
+    # Colorbar
+    plt.colorbar(im, fraction=0.046, pad=0.04, label='Correlation')
+    
+    # Labels
+    plt.xticks(ticks=np.arange(n), labels=corr.columns, rotation=45, ha='right')
+    plt.yticks(ticks=np.arange(n), labels=corr.columns)
+    
+    # Mostrar valores dentro das células
+    for i in range(n):
+        for j in range(n):
+            plt.text(j, i, f"{corr.iloc[i, j]:.2f}", ha='center', va='center', color='black', fontsize=8)
+    
+    plt.title("Correlation Heatmap")
+    plt.tight_layout()
+    plt.show()
 
 def plot_categorical_association(df, cat_cols=None, alpha=0.05, top_k=5):
     """
