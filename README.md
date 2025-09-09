@@ -104,10 +104,10 @@ Para organizar a análise e a solução do desafio, seguimos uma **estrutura de 
 
 ## Qual filme você recomendaria para uma pessoa que você não conhece?
 
-1. Quais são os principais fatores relacionados com alta expectativa de faturamento de um filme?
-2. É possível inferir o gênero do filme a partir da coluna Overview?
-3. Como prever a nota do IMDb a partir dos dados disponíveis?
-
+H_1: Existe associação entre elenco/diretores e filmes com notas mais altas.
+H_2: Variáveis financeiras, como Gross, têm correlação positiva com IMDB_Rating.
+H_3: Certas categorias de Genre ou Certificate podem influenciar a nota média.
+H_4: Estatísticas agregadas por histórico de atores/diretores podem ser boas preditoras.
 ### Hipóteses adicionais
 
 - Filmes com maiores investimentos em elenco e diretor renomado tendem a ter maior faturamento e nota no IMDb.
