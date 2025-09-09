@@ -281,7 +281,7 @@ Após a análise exploratória e modelagem preditiva, destacam-se os três princ
 
 ### Como usar
 
-- Criar ambiente virtual: `python -m venv venv`
+- Criar ambiente virtual: `python -m venv venv` (linux/MAc add '3'). 
 - Instalar dependências: `pip install -r requirements.txt`
 - Rodar notebook principal `analysis.ipynb`
 - Funções auxiliares disponíveis em `scripts/functions.py`
